@@ -38,6 +38,19 @@ class Main {
     for(String lineas: postfix){
       System.out.println(lineas);
     }
+    //trabajar segun lo que deseo el usuario
+    int elegido =menu();
+    Eligir eligir = new Eligir();
+    MenuGeneral<String> menugeneral = eligir.opcionMenu(elegido);
+
+    //para lo de arraylist
+    for(String lineas: postfix){
+      menugeneral.ordenar(lineas);
+       
+    }  
+
+    System.out.println("___________________________________");
+
   }
   //para retornar segun el tipo de signo que tenga
   public static int Prec(char ch){ 
@@ -104,5 +117,74 @@ class Main {
         result += stack.pop(); 
      } 
     return result; 
+  }
+
+  //MENU
+  public static int menu(){
+    boolean ciclo=true;
+    Scanner scanner = new Scanner(System.in);
+    int elegido=0;
+    do{
+      System.out.println("___________________________________");
+      System.out.println("Operar");
+      System.out.println("1. ArrayList");
+      System.out.println("2. Vector");
+      System.out.println("3. Lista");
+      //escoger
+      elegido = opcion();
+      //pedir si quiere single o double linked list
+      if(elegido==3){
+        System.out.println("4. SingleLinkedList");
+        System.out.println("5. DoubleLinkedList");
+        elegido=opcionLista();
+      }
+      ciclo=false;
+    }while(ciclo);
+    return elegido;
+  }
+
+  //verificar que sea un  numero el dato ingresado
+  public static int opcion(){
+    Scanner scanner = new Scanner(System.in);
+    int opcion_numero=0;
+    boolean ciclo_numero=true;
+            do{
+                try{
+                    String opcion = scanner.next();
+                    //verificar que sea una opcion adecuada
+                    opcion_numero = Integer.parseInt(opcion);
+                    if(opcion_numero>=1 && opcion_numero<=3){
+                        ciclo_numero=false;
+                    }else{
+                        System.out.println("Porfavor escoja una de las opcioens que se presentan en el menu");
+                    }
+                }catch(Exception e){
+                    System.out.println("Ingersa solo datos numericos");
+                }
+            }while(ciclo_numero);
+
+    return opcion_numero;
+  }
+  //menu para escoger la lista
+  public static int opcionLista(){
+    Scanner scanner = new Scanner(System.in);
+    int opcion_numero=0;
+    boolean ciclo_numero=true;
+            do{
+                try{
+                    String opcion = scanner.next();
+                    //verificar que sea una opcion adecuada
+                    opcion_numero = Integer.parseInt(opcion);
+                    if(opcion_numero>=4 && opcion_numero<=5){
+                        ciclo_numero=false;
+                    }else{
+                        System.out.println("Porfavor escoja una de las opcioens que se presentan en el menu");
+                    }
+                }catch(Exception e){
+                    System.out.println("Ingersa solo datos numericos");
+                }
+            }while(ciclo_numero);
+
+    return opcion_numero;
   }
 }

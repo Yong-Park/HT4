@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 public class Array<T> implements MenuGeneral<T> {
     ArrayList<T> datos = new ArrayList<T>();
-    ArrayList<Float> numeros  = new ArrayList<Float>();
-    ArrayList<String> operando = new ArrayList<String>();
     
     public void ordenar(T e){
         datos.add(e);
@@ -10,10 +8,13 @@ public class Array<T> implements MenuGeneral<T> {
         
     }
     public void push(T e){
-
+        datos.add(e);
     }
     public T pop(){
-        return null;
+        //pop de numeros
+        T dato = datos.get(Size()-1);
+        datos.remove(dato);
+        return dato;
     }
     public void addFirst(T e){
 
@@ -22,7 +23,8 @@ public class Array<T> implements MenuGeneral<T> {
 
     }
     public int Size(){
-
-        return 0;
+        int longitud = datos.size();
+        return longitud;
     }
+    
 }

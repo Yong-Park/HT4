@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Vector;
 public class Calculadora {
     //atributos
     Float num1=0f;

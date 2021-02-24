@@ -14,8 +14,6 @@ class Main {
    * @param args
    */
   public static void main(String[] args) {
-    //para llamar la clase calculadora, este se debe de cambiar para que use el signleton despues
-    //Calculadora calculadora = new Calculadora();
     //singleton
     Singleton calcu =Singleton.getInstance();
 

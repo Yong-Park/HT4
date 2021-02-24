@@ -1,3 +1,7 @@
+/*
+Se uso de referencia de geeks for geeks
+https://www.geeksforgeeks.org/singleton-class-java/
+*/
 public class Singleton {
     private static Singleton single_instance = null; 
   

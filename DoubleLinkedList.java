@@ -1,21 +1,23 @@
 /*
 Codigo reutilizado del documento que se compartio en el modulo de listas encadenadas
 */
-public class SinlgyLinkedList<T> extends List<T>{
-    protected int count; 
-    protected Node<T> head; 
+public class DoubleLinkedList<T> extends List<T>{
+    protected int count;
+    protected DoubleNode<T> head;
+    protected DoubleNode<T> tail;
 
-    public void SinglyLinkedList(){
-      head = null;
-      count = 0;
+    public DoubleLinkedList(){
+        head = null;
+        tail = null;
+        count = 0;
     }
-
     
     /** 
      * @param e
      */
     public void push(T e){
-        head = new Node<T>(e, head);
+        head = new DoubleNode<T>(e, head, null);
+        if (tail == null) tail = head;
         count++;
     }
     
@@ -24,7 +26,7 @@ public class SinlgyLinkedList<T> extends List<T>{
      */
     public T pop(){
         //pop de numeros
-        Node<T> temp = head;
+        DoubleNode<T> temp = head;
         head = head.next(); // move head down list
         count--;
         return temp.value();

@@ -9,6 +9,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Stack;
 class Main {
+  
+  /** 
+   * @param args
+   */
   public static void main(String[] args) {
     //para llamar la clase calculadora, este se debe de cambiar para que use el signleton despues
     Calculadora calculadora = new Calculadora();
@@ -35,11 +39,11 @@ class Main {
     }
     //mostrar lo de infix
     for(String lineas: infix){
-      System.out.println(lineas);
+      System.out.println("Los datos en infix: "+lineas);
     }
     //mostrar lo de posfix
     for(String lineas: postfix){
-      System.out.println(lineas);
+      System.out.println("Los datos en postfix: "+lineas);
     }
     //trabajar segun lo que deseo el usuario
     int elegido =menu();
@@ -59,6 +63,11 @@ class Main {
     System.out.println("___________________________________");
 
   }
+  
+  /** 
+   * @param ch
+   * @return int
+   */
   //para retornar segun el tipo de signo que tenga
   public static int Prec(char ch){ 
         switch (ch) 
@@ -77,6 +86,11 @@ class Main {
         return -1; 
     } 
 
+  
+  /** 
+   * @param dato
+   * @return String
+   */
   //para convertir de infix a postfix
   public static String infixToPostfix(String dato){
     // crear un string vacio
@@ -126,6 +140,10 @@ class Main {
     return result; 
   }
 
+  
+  /** 
+   * @return int
+   */
   //MENU
   public static int menu(){
     boolean ciclo=true;
@@ -150,6 +168,10 @@ class Main {
     return elegido;
   }
 
+  
+  /** 
+   * @return int
+   */
   //verificar que sea un  numero el dato ingresado
   public static int opcion(){
     Scanner scanner = new Scanner(System.in);
@@ -172,6 +194,10 @@ class Main {
 
     return opcion_numero;
   }
+  
+  /** 
+   * @return int
+   */
   //menu para escoger la lista
   public static int opcionLista(){
     Scanner scanner = new Scanner(System.in);

@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-public class Array<T> implements MenuGeneral<T> {
-    ArrayList<T> datos = new ArrayList<T>();
+import java.util.Vector;
+public class VectorDatos<T> implements MenuGeneral<T>{
+    Vector<T> datos = new Vector<T>();
     
     public void ordenar(T e){
         datos.add(e);
@@ -21,5 +21,4 @@ public class Array<T> implements MenuGeneral<T> {
         int longitud = datos.size();
         return longitud;
     }
-    
 }

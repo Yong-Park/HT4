@@ -1,7 +1,17 @@
-import java.util.ArrayList;
-public class Array<T> implements MenuGeneral<T> {
-    ArrayList<T> datos = new ArrayList<T>();
-    
+import java.util.LinkedList;
+
+public class SinlgyLinkedList<T> implements MenuGeneral<T>{
+    LinkedList<T> datos = new LinkedList<T>();
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+
     public void ordenar(T e){
         datos.add(e);
         System.out.println(datos);
@@ -21,5 +31,4 @@ public class Array<T> implements MenuGeneral<T> {
         int longitud = datos.size();
         return longitud;
     }
-    
 }

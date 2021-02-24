@@ -15,7 +15,9 @@ class Main {
    */
   public static void main(String[] args) {
     //para llamar la clase calculadora, este se debe de cambiar para que use el signleton despues
-    Calculadora calculadora = new Calculadora();
+    //Calculadora calculadora = new Calculadora();
+    //singleton
+    Singleton calcu =Singleton.getInstance();
 
     ArrayList<String> infix = new ArrayList<String>();
     ArrayList<String> postfix = new ArrayList<String>();
@@ -52,10 +54,10 @@ class Main {
     MenuGeneral<String> operando = eligir.opcionMenu(elegido);
     MenuGeneral<Float> datos = eligir.opcionMenu(elegido);
 
-
+    
     //para realizar los calculos en la calculadora
     for(String lineas: postfix){
-      String dato = calculadora.Calculo(lineas, operando, datos);
+      String dato = calcu.caclular(lineas, operando, datos);
       System.out.println(dato);
        
     }  

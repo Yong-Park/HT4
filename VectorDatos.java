@@ -1,7 +1,6 @@
 import java.util.Vector;
 public class VectorDatos<T> implements MenuGeneral<T>{
     Vector<T> datos = new Vector<T>();
-
     
     /** 
      * @param e
@@ -19,7 +18,6 @@ public class VectorDatos<T> implements MenuGeneral<T>{
         datos.remove(dato);
         return dato;
     }
-    
     
     /** 
      * @return int

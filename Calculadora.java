@@ -7,7 +7,10 @@ public class Calculadora {
     String operacion;
     Float resultado = 0f;
     
-    /** 
+    public Calculadora() {
+	}
+
+	/** 
      * @param linea
      * @return String
      */

@@ -1,7 +1,7 @@
 /*
 Main.java
 La parte de la lectura de archivos se copio del codigo de la hoja de tranajo 2 que se realizo
-La parte de la conversion se tomo de geeks for geeks https://www.geeksfgorgeeks.org/stack-set-2-infix-to-postfix/
+La parte de la conversion se tomo de geeks for geeks https://www.geeksgorgeeks.org/stack-set-2-infix-to-postfix/
 */
 import java.util.Scanner;
 import java.util.ArrayList;
